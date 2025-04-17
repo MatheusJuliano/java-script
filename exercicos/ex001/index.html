@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média Final</title>
+
+     <script>function Calcular (){
+        //*obter as três notas//
+        var nota1 = parseFloat(document.getElementById("nota1").value);
+        var nota2 = parseFloat(document.getElementById("nota2").value);
+        var nota3 = parseFloat(document.getElementById("nota3").value);
+
+        
+        // Verifica se os valores são válidos
+        if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
+                document.getElementById("Mensagem").innerHTML = "Digite todas as notas corretamente!";
+                return;
+        }
+
+
+        //média//
+        var media=(nota1+nota2+nota3) / 3;
+        //situacao//
+        var situacao= "";
+        if(media>=7){
+            situacao="Aprovado(a)";}
+            else if( media>=5){
+                situacao="Em Recuperação";
+            }else{situacao="Reprovado(a)";}
+            //mensagem//
+            document.getElementById("Mensagem").innerHTML=situacao+"com media"+ media.toFixed(1) }</script>
+
+            <style>
+                body{
+                    background-color: grey;
+                    align-items: center;
+                    text-align: center;
+                    
+                }
+            </style>
+
+
+</head>
+<body>
+     
+   
+
+    <form action="javascript:void(0);">
+        <input type="text" placeholder="Primeira nota" id="nota1"> 
+        <input type="text" placeholder="Segunda nota" id="nota2">
+        <input type="text" placeholder="Terceira nota" id="nota3">
+        <input type="button" value="Enviar" onclick="Calcular()">
+    </form>
+    <h1 id="Mensagem"></h1>
+    
+</body>
+</html>

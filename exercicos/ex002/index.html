@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa</title>
+    <script>function Calcular(){
+        //captura de dados//
+        var produto = document.getElementById("produto").value;
+
+        var valor = parseFloat(document.getElementById("valor").value);
+
+        var pagamento = document.getElementById("pagamento").value;
+
+        var mensagem = document.getElementById("mensagem");
+
+        //verificar se havera desconto ou não//
+
+        var total;
+
+        if(isNaN(valor)){
+            document.getElementById("mensagem").innerHTML = "Digite um Valor Válido."; mensagem.style.display = "block"; return;
+
+        }if (pagamento == "1"){
+            total = valor * 0.9; // 10% de desconto//
+        } else{
+            total = valor;
+        }
+
+        //mostrar resultado//
+
+        document.getElementById("mensagem").innerHTML = "Produto:" + produto + "<br> Total a Pagar: R$" + total.toFixed(2);
+        mensagem.style.display = "block"
+
+        
+
+           
+        } </script>
+
+        <style> 
+            body{
+                background-color: rgb(158, 156, 156);
+                text-align: center;
+                padding-top: 50px;
+
+            }
+            #mensagem{ text-align: center;
+                background-color: #d1f7d6;
+                border: 2px solid #4caf50;
+                border-radius: 15px;
+                padding: 20px;
+                max-width: 300px;
+                margin: 0 auto;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                display: none; /* começa escondido */
+            }
+
+            form {
+                margin-bottom: 30px;
+                }
+
+            input[type="text"]{ border-radius: 10px;
+                padding: 8px;
+                border: 1px solid #ccc;
+                margin: 5px;
+                font-size: 16px;}
+
+            input[type="button"] {
+            border-radius: 10px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+                                }
+
+            input[type="button"]:hover {
+            background-color: #45a049;
+    }
+            input, select {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+    }
+
+
+        </style>
+</head>
+<body>
+
+    <form action="javascript:void(0);">
+        <input type="text" placeholder="produto" id="produto">
+        <input type="text" placeholder="valor" id="valor">
+
+    <select name="pagamento" id="pagamento">
+        <option value="0">Forma De Pagamento</option>
+        <option value="1">A Vista</option>
+        <option value="2">A Prazo</option>
+    </select>
+
+    <input type="button" value="Calcular" onclick="Calcular()">
+    </form>
+
+    <h2 id="mensagem"></h2>
+    
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número maior</title>
+<script>
+
+    function verificarMaior (){
+            // obter os números//
+        var num1 = parseFloat|(document.getElementById("num1").value)
+        var num2 = parseFloat|(document.getElementById("num2").value)
+        var num3 = parseFloat|(document.getElementById("num3").value)
+
+        if (isNaN(num1) || isNaN(num2)  ||isNaN(num3)) {
+            document.getElementById("Resultado").innerHTML = "Digite todos os Números." ;
+            return;
+
+        }
+
+        var maior = num1;
+
+        if (num2 > maior)  {
+            maior = num2;
+        }
+        if(num3 > maior) {
+            maior = num3;
+        }
+
+        document.getElementById("Resultado").innerHTML = " O Maior Número é:" + maior
+    }
+
+
+
+</script>
+
+<style>
+
+    body{
+        background-color: rgba(223, 190, 147, 0.856);
+        text-align: center;
+    }
+
+    input[type="text"]{
+        border: 2px solid #000000;
+        border-radius: 15px;
+        padding: 10px;
+        max-width: 300px;
+        margin: 0 auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    input[type="button"]{
+
+        background-color: rgb(21, 255, 0);
+        border: 2px solid #040804;
+        border-radius: 15px;
+        padding: 10px;
+        margin: 0 auto;
+
+    }
+
+    input[type="button"]:hover {
+        background-color: rgb(115, 248, 7);
+    }
+</style>
+
+</head>
+<body>
+    <input type="text" placeholder="Número 1" id="num1">
+    <input type="text" placeholder="Número 2" id="num2">
+    <input type="text" placeholder="Número 3" id="num3">
+    <input type="button" value="Verificar" onclick="verificarMaior()">
+
+    <h2 id="Resultado"></h2>
+    
+</body>
+</html>

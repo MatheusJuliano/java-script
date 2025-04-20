@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio Digital</title>
+
+    <link rel="icon" href="favicon/icons8-relógio-48.png" type="favicon.png">
+    
+    <script>
+        function atualizarRelogio() {
+            const agora = new Date();
+
+            let horas = agora.getHours();
+            let minutos = agora.getMinutes();
+            let segundos = agora.getSeconds();
+
+            // ccoloca o zero na frente se for menor 10
+
+            horas = horas <10 ? "0" + horas : horas;
+            minutos = minutos < 10 ? "0" + minutos : minutos;
+            segundos = segundos < 10 ? "0" + segundos : segundos;
+
+
+
+            const horaAtual = `${horas}:${minutos}:${segundos}`;
+
+
+                    //Mostra na tela//
+            document.getElementById("relogio").innerHTML = horaAtual;
+                
+           
+
+           
+
+            
+        }
+        
+                // chama a funcao a cada segundo//
+         setInterval(atualizarRelogio, 1000);
+                // chama a funcao logo que o site abre (pra nao esperar 1 segundo)//
+         atualizarRelogio();
+
+
+    </script>
+
+    <style>
+        body{
+            background-color: #121212;
+            color: #ffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .relogio{
+            background-color:  #000000;;
+            padding: 40px 60px;
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgb(63, 62, 62);
+            font-size: 3.2em;
+            letter-spacing: 3px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="relogio" id="relogio">00:00:00</div>
+    
+</body>
+</html>

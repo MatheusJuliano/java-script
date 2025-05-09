@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pais de Origem</title>
+</head>
+<body>
+    <h1>Brasileiro ou Estrangeiro?</h1>
+    De onde voçê é :<input type="text" name="txt1" id="txt1">
+    <input type="button" value="Verificar" onclick="Validar()">
+    <div id="res"></div>
+
+    <script>
+        function Validar(){
+            var txt = window.document.querySelector('input#txt1')
+            var res = window.document.querySelector('div#res')
+            var pais = txt.value.trim()
+
+             if (pais.toLowerCase() === "brasil" || pais.toLowerCase() === "brasileiro") {
+            res.innerHTML = `Você é <strong>Brasileiro!</strong>`
+        } else {
+            res.innerHTML = `Você é <strong>Estrangeiro!</strong>`
+        }
+        }
+    </script>
+
+    
+</body>
+</html>

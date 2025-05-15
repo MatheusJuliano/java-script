@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function acao(){
+            // obter os numeros 
+            var inicio = parseInt(document.getElementById("inicio").value)
+            var fim = parseInt(document.getElementById("fim").value)
+
+            // laço
+            while(inicio <= fim){
+                document.getElementById("mensagem").innerHTML += inicio + " "
+                inicio++
+
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <form >
+       <input type="text" placeholder="Número inicial" id="inicio">
+       <input type="text" placeholder="Número final" id="fim"> 
+       <input type="button" value="Enviar" onclick="acao()">
+    </form>
+    <h1 id="mensagem"> </h1>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
